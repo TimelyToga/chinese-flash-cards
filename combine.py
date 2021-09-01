@@ -1,8 +1,6 @@
 """
 This is a script for combining all flashcards in `sets/` into a single 
 flashcard data file: `all.tsv`
-
-Script Version: 1.0.0
 """
 
 import csv
@@ -13,6 +11,8 @@ import time
 SETS_DIR = 'sets'
 OUTPUT_DIR = 'final'
 OUTPUT_FILE_PREFIX = 'all-terms__'
+
+VERSION = '1.0.0'
 
 def get_terms(fn):
     with open(fn) as fd:
@@ -67,7 +67,7 @@ def dedup_terms(term_lst):
     # Merge duped definitions
     for k,v in term_map.items(): 
         if len(v) != 1:
-            dupes += len(v)
+            dupes += len(v) - 1
             term_map[k] = merge_definitions(v)
 
     return term_map, dupes
