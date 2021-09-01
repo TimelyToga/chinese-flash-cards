@@ -49,7 +49,6 @@ def dedup_terms(term_lst):
     term_map = {}
     dupes = 0
     for flashcard in term_lst:
-        # print(flashcard)
         # Input validation
         if len(flashcard) != 2:
             raise Exception(f'Terms should only have 2 fields: {term}')
@@ -62,7 +61,6 @@ def dedup_terms(term_lst):
             lst.append(definition)
             term_map[term] = lst
         else: 
-            # print(f'Added new term: {flashcard}')
             term_map[term] = [definition]
 
 
@@ -117,7 +115,6 @@ def write_to_file(term_list, output_dir):
             w.writerow(term)
 
     print(f'\n\nSuccessfully wrote {len(term_list)} flashcards to {output_file_path}.')
-
 
 if __name__ == '__main__': 
     combine(SETS_DIR, OUTPUT_DIR)
