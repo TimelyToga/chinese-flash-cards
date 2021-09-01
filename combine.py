@@ -1,6 +1,8 @@
 """
 This is a script for combining all flashcards in `sets/` into a single 
 flashcard data file: `all.tsv`
+
+Script Version: 1.0.0
 """
 
 import csv
